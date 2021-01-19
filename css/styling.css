@@ -331,9 +331,9 @@ label {
   margin-bottom:2vh;
 }
 
-.type-select {
+/*.type-select {
   background: rgba(100,100,100, 1);
-}
+}*/
 
 .drop-down-select select, .category-select select, .type-select select {
   background-color: rgba(0,0,0,0.6);

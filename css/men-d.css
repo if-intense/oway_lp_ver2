@@ -44,6 +44,14 @@ label {
 }
 
 
+.product {
+  color:white;
+  margin-top:5vh;
+  text-align:center;
+  font-family:"Helvetica";
+  font-weight:bold;
+  font-size:64px;
+}
 
 /*Label*/
 
@@ -230,10 +238,11 @@ label {
 }*/
 
 #wrapper h2.title {
-  margin:3vh 30px;
+  margin:1vh auto 3vh;
   color: white;
   text-align:center;
   font-weight:bold;
+  font-size:24px;
 }
 
 
