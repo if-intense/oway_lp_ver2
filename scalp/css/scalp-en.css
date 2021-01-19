@@ -1,0 +1,52 @@
+.wrapper {
+  background:rgba(246,246,246, 0.8);
+  /*background:red;*/
+}
+
+.no-gutters {
+   margin-right: 0;
+   margin-left: 0;
+}
+ .no-gutters > [class*="col-"] {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+
+section.q-s {
+  margin: 2vh auto;
+  border-radius:3px;
+  background-color:white;
+  padding:30px 20px;
+  box-shadow:1px 3px 20px rgb(220,220,220);
+  width: 90%;
+  border:1px solid rgb(220,220,220);
+
+}
+
+
+button {
+  width:100%;
+  padding:10px;
+}
+
+.banner {
+  background: rgb(146,174,29);
+  background: linear-gradient(180deg, rgba(146,174,29,1) 0%, rgba(236,250,177,1) 100%);
+  padding:3vh 0;
+  /*margin-top:2vh;*/
+}
+
+.banner h2, .banner p {
+  text-align:center;
+}
+
+
+.container {
+  background:rgb(255,255,255);
+  margin:4vh auto 0;
+}
+
+.product {
+  margin:3vh auto;
+}

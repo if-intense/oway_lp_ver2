@@ -1,0 +1,936 @@
+
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OWAYアンケート診断</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/enquete.css">
+    <link rel="icon" type="image/svg+xml" href="../img/ifing_logo.svg">
+      <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+
+        <script>
+            $(function(){
+                //on click of the button
+                $(".submit").click(function(){
+                    //hide the result
+                    $(".result").hide();
+
+                    //get the variable
+                    var qNum = $(".questionnaire").length;
+
+                    if( $(".select input:checked").length < qNum ){
+                        //if there is a blank answer, show the message
+                        $("#message").show();
+
+                    } else {
+                        //get the number of input numbers
+                        var typeANum = $(".typeA:checked").length,
+                            typeBNum = $(".typeB:checked").length,
+                            typeCNum = $(".typeC:checked").length,
+                            typeDNum = $(".typeD:checked").length;
+                            typeENum = $(".typeE:checked").length;
+                            typeFNum = $(".typeF:checked").length;
+                            typeGNum = $(".typeG:checked").length;
+                            typeHNum = $(".typeH:checked").length;
+                            typeINum = $(".typeI:checked").length;
+                            typeJNum = $(".typeJ:checked").length;
+
+                        // added on 2020.12.22
+                        if ($('.yes').is(':checked')) {
+                            $(".color").show();
+                        }
+                        else
+                           {$(".color").hide();
+                        }
+
+                        if ($('.perm-yes').is(':checked')) {
+                           $(".perm").show();
+                        }
+                        else
+                           {$(".perm").hide();
+                        }
+
+                        if( typeANum >= typeBNum && typeANum >= typeCNum && typeANum >= typeDNum && typeANum >= typeENum && typeANum >= typeFNum && typeANum >= typeGNum && typeANum >= typeHNum && typeANum >= typeINum && typeANum >= typeJNum) {
+                            //if A
+                            $(".resultA").fadeIn();
+                        } else if( typeBNum >= typeANum && typeBNum >= typeCNum && typeBNum >= typeDNum && typeBNum >= typeENum && typeBNum >= typeFNum && typeBNum >= typeGNum && typeBNum >= typeHNum && typeBNum >= typeINum && typeBNum >= typeJNum) {
+                            //if B
+                            $(".resultB").fadeIn();
+                        } else if( typeCNum >= typeANum && typeCNum >= typeBNum && typeCNum >= typeDNum && typeCNum >= typeENum && typeCNum >= typeFNum && typeCNum >= typeGNum && typeCNum >= typeHNum && typeCNum >= typeINum && typeCNum >= typeJNum) {
+                            //if C
+                            $(".resultC").fadeIn();
+                        } else if( typeDNum >= typeANum && typeDNum >= typeBNum && typeDNum >= typeCNum && typeDNum >= typeENum && typeDNum >= typeFNum && typeDNum >= typeGNum && typeDNum >= typeHNum && typeDNum >= typeINum && typeDNum >= typeJNum) {
+                            //if D
+                            $(".resultD").fadeIn();
+                        } else if (typeENum >= typeANum && typeENum >= typeBNum && typeDNum >= typeCNum && typeENum >= typeDNum && typeENum >= typeFNum && typeENum >= typeGNum && typeENum >= typeHNum && typeENum >= typeINum && typeENum >= typeJNum) {
+                            //if E
+                            $(".resultE").fadeIn();
+                        } else if (typeFNum >= typeANum && typeFNum >= typeBNum && typeFNum >= typeCNum && typeFNum >= typeDNum && typeFNum >= typeENum && typeFNum >= typeGNum && typeFNum >= typeHNum && typeFNum >= typeINum && typeFNum >= typeJNum) {
+                            //if F
+                            $(".resultF").fadeIn();
+                        } else if (typeGNum >= typeANum && typeGNum >= typeBNum && typeGNum >= typeCNum && typeGNum >= typeDNum && typeGNum >= typeENum && typeGNum >= typeFNum && typeGNum >= typeHNum && typeGNum >= typeINum && typeGNum >= typeJNum) {
+                            //if G
+                            $(".resultG").fadeIn();
+                        } else if (typeHNum >= typeANum && typeHNum >= typeBNum && typeHNum >= typeCNum && typeHNum >= typeDNum && typeHNum >= typeENum && typeHNum >= typeFNum && typeHNum >= typeGNum && typeHNum >= typeINum && typeHNum >= typeJNum) {
+                            //if H
+                            $(".resultH").fadeIn();
+                        } else if (typeINum >= typeANum && typeINum >= typeBNum && typeINum >= typeCNum && typeINum >= typeDNum && typeINum >= typeENum && typeINum >= typeFNum && typeINum >= typeGNum && typeINum >= typeHNum && typeINum >= typeJNum) {
+                            //if I
+                            $(".resultI").fadeIn();
+                        }　else if (typeJNum >= typeANum && typeJNum >= typeBNum && typeJNum >= typeCNum && typeJNum >= typeDNum && typeJNum >= typeENum && typeJNum >= typeFNum && typeJNum >= typeGNum && typeJNum >= typeHNum && typeJNum >= typeINum) {
+                            //if J
+                            $(".resultJ").fadeIn();
+                        }　
+
+
+
+                        if ($(".typeK").is(":checked") || $(".typeL").is(":checked"))  {
+                            $(".disp-sunway").show();
+                        } else {
+                            $(".disp-sunway").hide();
+                        }
+
+
+
+
+
+
+
+
+
+                    }
+                });
+            })
+        </script>
+
+        <script>
+          $(document).ready(function(){
+            $(".questionnaire .button").on('click', function(event) {
+              if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+                }, 1000, function(){
+                  window.location.hash = hash;
+                });
+              } // End if
+            });
+          });
+        </script>
+
+        <script>
+          $(document).on('click','#refresh',function(){
+           location.reload(true);
+           $('html, body').scrollTop(0);
+          });
+        </script>
+
+
+    <body>
+    <!-- wrapper -->
+    <div id="wrapper">
+      <!-- nav -->
+      <nav class="navbar sticky-top navbar-light bg-light">
+        <a href="../index.html">
+        <img src="../image/logo.svg" alt="IFing Beauty Logo" class="logo">
+        </a>
+      </nav>
+      <!-- //nav -->
+
+
+            <!-- question -->
+            <div class="question">
+
+
+
+                <!-- questionnare id=top_page -->
+                <div class="questionnaire" id="top_page">
+                  <div class="question_title">
+                    <!-- <h6>[QUESTION]</h6> -->
+                    <h2>WEBカウンセリングへようこそ</h2>
+                  </div>
+                  <div class="select">
+                    <h6><span>OWAYの商品をはじめてご使用されるお客様にお悩みやご希望にラインナップをご提案させていただきます。</span></h6>
+                    <!-- <p><span><a class="next" href="#section2">次へ</a></span></p> -->
+
+                  </div>
+                  <section>
+                    <div class="question_title">
+                    <h6>[QUESTION]</h6>
+                    <h2>Q1. 髪の太さは？</h2>
+                  </div>
+                  <div class="select">
+                    <div class="select answer row">
+                      <div class="box">
+                        <input type="radio" name="thickness" id="thick"/>
+                        <label for="thick">太い</label>
+                        <input type="radio" name="thickness" id="partially-thick"/>
+                        <label for="partially-thick">やや太い</label>
+                        <input type="radio" name="thickness" id="normal"/>
+                        <label for="normal">普通</label>
+                        <input type="radio" name="thickness" id="partially-thin"/>
+                        <label for="partially-thin">細い</label>
+                        <input type="radio" name="thickness" id="thin"/>
+                        <label for="thin">細い</label>
+                      </div>
+                    </div>
+                    <!-- <p><span><a class="next" href="#section3">次へ</a></span></p> -->
+                    <div class="row justify-content-center">
+                    <a href="#section2" class="button">次へ</a>
+                    </div>
+                  </div>
+                  </section>
+                  <section>
+                    <div class="question_title">
+                    <h6>[QUESTION]</h6>
+                    <h2>Q2. 該当するお悩みを選択してください。</h2>
+                    <p>（複数選択可能）</p>
+                  </div>
+                  <div class="select answer">
+
+                    <ul class="cbox-question">
+                      <li><input type="checkbox" id="checkbox12" value="細い"><label for="checkbox12">細い</label></li>
+                      <li><input type="checkbox" id="checkbox13" value="剛毛"><label for="checkbox13">剛毛</label></li>
+                      <li><input type="checkbox" id="checkbox14" value="縮毛"><label for="checkbox14">縮毛</label></li>
+                      <li><input type="checkbox" id="checkbox15" value="うねり"><label for="checkbox15">うねり</label></li>
+                      <li><input type="checkbox" id="checkbox16" value="広がる"><label for="checkbox16">広がる</label></li>
+                      <li><input type="checkbox" id="checkbox17" value="パサつき"><label for="checkbox17">パサつき</label></li>
+                      <li><input type="checkbox" id="checkbox6" value="切れ毛"><label for="checkbox6">切れ毛</label></li>
+                      <li><input type="checkbox" id="checkbox7" value="枝毛"><label for="checkbox7">枝毛</label></li>
+                      <li><input type="checkbox" id="checkbox8" value="ベタつき"><label for="checkbox8">ベタつき</label></li>
+                      <li><input type="checkbox" id="checkbox9" value="ハリコシ"><label for="checkbox9">ハリコシ</label></li>
+                      <li><input type="checkbox" id="checkbox18" value="ボリューム"><label for="checkbox18">ボリューム</label></li>
+                      <li><input type="checkbox" id="checkbox19" value="白髪" class="typeO"><label for="checkbox19">白髪</label></li>
+                      <li><input type="checkbox" id="checkbox10" value="紫外線" class="typeK"><label for="checkbox10">紫外線</label></li>
+                      <li><input type="checkbox" id="checkbox11" value="塩素（プール・海など）" class="typeL"><label for="checkbox11">塩素（プール・海など）</label></li>
+                    </ul>
+                    <div class="row justify-content-center">
+                    <a href="#section3" class="button">次へ</a>
+                    </div>
+                    <!-- <p><span><a class="next" href="#section5">次へ</a></span></p> -->
+                  </div>
+                  </section>
+                  <section>
+                    <div class="question_title">
+                    <h6>[QUESTION]</h6>
+                    <h2>Q3. ヘアカラーの頻度</h2>
+                  </div>
+                  <div class="select">
+                    <div class="select answer row">
+                      <div class="color box">
+                        <input type="radio" name="color" id="frequency-no" value="no" />
+                          <label for="frequency-no">染めていない</label>
+                        <input type="radio" name="color" id="regular" class="yes"/>
+                          <label for="regular">２週間に１回</label>
+                        <input type="radio" name="color" id="once" class="yes"/>
+                          <label for="once" >１ヶ月に１回</label>
+                        <input type="radio" name="color" id="months" class="yes"/>
+                          <label for="months">２〜３ヶ月に１回</label>
+                        <input type="radio" name="color" id="other" class="yes"/>
+                          <label for="other">それ以外</label>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                    <a href="#section4" class="button">次へ</a>
+                    </div>
+                  </div>
+                  </section>
+                  <section>
+                    <div class="question_title">
+                      <h6>[QUESTION]</h6>
+                      <h2>Q4. パーマの頻度</h2>
+                    </div>
+                    <div class="select">
+                      <div class="select answer row">
+                        <div class="color box">
+                          <input type="radio" name="perm" id="perm-frequency-no" value="no" />
+                            <label for="perm-frequency-no">かけていない</label>
+                          <input type="radio" name="perm" id="perm-once" class="perm-yes"/>
+                            <label for="perm-once" >１ヶ月に１回</label>
+                          <input type="radio" name="perm" id="perm-months" class="perm-yes"/>
+                            <label for="perm-months">２〜３ヶ月に１回</label>
+                          <input type="radio" name="perm" id="perm-other" class="perm-yes"/>
+                            <label for="perm-other">それ以外</label>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <section>
+                    <div class="question_title">
+                    <h6>[QUESTION]</h6>
+                    <h2>Q5. ヘアカラーやパーマの際に美容室のトリートメントを受けられますか？</h2>
+                  </div>
+                  <div class="select">
+                    <div class="select answer row">
+                      <div class="box">
+                        <input type="radio" name="hairperm" id="dispersed"/>
+                        <label for="dispersed">不定期に受ける</label>
+                        <input type="radio" name="hairperm" id="everytime"/>
+                        <label for="everytime">毎回受ける</label>
+                        <input type="radio" name="hairperm" id="never"/>
+                        <label for="never">受けない</label>
+                      </div>
+                    </div>
+                    <!-- <p><span><a class="next" href="#section2">次へ</a></span></p> -->
+                    <div class="row justify-content-center">
+                    <a href="#section6" class="button">次へ</a>
+                    </div>
+                  </div>
+                  </section>
+                  <section>
+                    <div class="question_title">
+                    <h6>[QUESTION]</h6>
+                    <h2>Q5. 最近特に感じるお悩みは？</h2>
+                    <p>（１項目選択のみ）</p>
+                  </div>
+                  <div class="select answer row">
+                    <div class="box">
+                      <input type="radio" name="q05" id="typeA" class="typeA"/>
+                      <label for="typeA">クセを落ち着かせたい</label>
+                      <input type="radio" name="q05" id="typeB" class="typeB"/>
+                      <label for="typeB">健康な髪を維持したい</label>
+                      <input type="radio" name="q05" id="typeC" class="typeC"/>
+                      <label for="typeC">髪も頭皮も潤わせたい</label>
+                      <input type="radio" name="q05" id="typeD" class="typeD"/>
+                      <label for="typeD">カラーのダメージをケアしたい</label>
+                      <input type="radio" name="q05" id="typeE" class="typeE"/>
+                      <label for="typeE">パーマのダメージをケアしたい</label>
+                      <input type="radio" name="q05" id="typeF" class="typeF"/>
+                      <label for="typeF">髪のダメージケアをしたい</label>
+                      <input type="radio" name="q05" id="typeG" class="typeG"/>
+                      <label for="typeG">パーマやクセを綺麗に見せたい</label>
+                      <input type="radio" name="q05" id="typeH" class="typeH"/>
+                      <label for="typeH">ハリコシが欲しい</label>
+                      <input type="radio" name="q05" id="typeI" class="typeI"/>
+                      <label for="typeI">ボリュームが欲しい</label>
+                      <input type="radio" name="q05" id="typeJ" class="typeJ"/>
+                      <label for="typeJ">とにかくしっとりしたい</label>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary submit" data-toggle="modal" data-target="#resultModal">
+                      結果を見る
+                  </button>
+                  </section>
+                </div>
+                <!-- questionnare id=top_page -->
+
+
+
+            <!-- question -->
+            <div class="question">
+
+
+
+                <!-- questionnare id=section2 -->
+                <div class="questionnaire" id="section1">
+
+                </div>
+                <!-- questionnare id=section2 -->
+
+
+                <!-- questionnare id=section4 -->
+                <div class="questionnaire" id="section2">
+
+                </div>
+                <!-- questionnare id=section4 -->
+
+
+
+
+
+
+
+
+
+                <!-- 2020 12.22 added -->
+                <!-- questionnare id=section6 -->
+                <div class="questionnaire" id="section3">
+
+                </div>
+                <!-- questionnare id=section6 -->
+
+                <!-- questionnare id=section7 -->
+                <div class="questionnaire" id="section4">
+
+                </div>
+                <!-- questionnare id=section7 -->
+                <!-- 2020 12.22 added -->
+
+                <!-- questionnare id=section1 -->
+                <div class="questionnaire" id="section5">
+
+                </div>
+                <!-- questionnare id=section1 -->
+
+                <!-- questionnare id=section5 -->
+                <div class="questionnaire h-100" id="section6">
+
+
+                  <!-- カウンセリング診断の結果 -->
+                  <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalTitle" aria-hidden="true"  data-backdrop="false" data-keyboard="false">
+                    <div class="modal-dialog" role="document">
+                      <!-- modal-content -->
+                      <div class="modal-content">
+                        <div class="resultModal modal-header">
+                          <h5 class="modal-title" id="resultModalTitle">診断結果</h5>
+                        </div>
+
+                        <!-- modal-body (start) -->
+                        <div class="modal-body">
+
+                            <!-- If ResultA -->
+                            <div class="result resultA">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>シルキングロー</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-silkn-glow">
+                                      <img src="../image/product/silkglow.jpg" alt="シルキングロー" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeOが選択された場合 -->
+                                <div class="disp-grey col-md-6 col-12">
+                                  <h3>白髪</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+
+
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If Result B -->
+                            <div class="result resultB">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>デイリーユーズ</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-daily-act">
+                                      <img src="../image/product/dailyAct.jpg" alt="デイリーユーズ" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If Result C -->
+                            <div class="result resultC">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>モイスト</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-moisturing">
+                                      <img src="../image/product/moisturizing.jpg" alt="モイスト" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultD -->
+                            <div class="result resultD">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>カラープロテクション</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-moisturing">
+                                      <img src="../image/product/colorUp.jpg" alt="カラープロテクション" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-rebuilding">
+                                      <img src="../image/product/rebuilding.jpg" alt="リビルディング" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                          <!-- If ResultE -->
+                            <div class="result resultE">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>カーリーポーション</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-becurly">
+                                      <img src="../image/product/beCurly.jpg" alt="カーリーポーション" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-rebuilding">
+                                      <img src="../image/product/rebuilding.jpg" alt="リビルディング" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                          <!-- If ResultF -->
+                            <div class="result resultF">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-rebuilding">
+                                      <img src="../image/product/rebuilding.jpg" alt="リビルディング" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                          <!-- If ResultG -->
+                            <div class="result resultG">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>カーリーポーション</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-becurly">
+                                      <img src="../image/product/beCurly.jpg" alt="カーリーポーション" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultH -->
+                            <div class="result resultH">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>ボリューム</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-xvolume">
+                                      <img src="../image/product/xVolume.jpg" alt="ボリューム" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-rebuilding">
+                                      <img src="../image/product/rebuilding.jpg" alt="リビルディング" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultI -->
+                            <div class="result resultI">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>ボリューム</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-xvolume">
+                                      <img src="../image/product/xVolume.jpg" alt="ボリューム" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-rebuilding">
+                                      <img src="../image/product/rebuilding.jpg" alt="リビルディング" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-6" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultJ -->
+                            <div class="result resultJ">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-6 col-12">
+                                  <h3>シルキングロー</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-silkn-glow">
+                                      <img src="../image/product/silkglow.jpg" alt="シルキングロー" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                  <h3>モイスト</h3>
+                                    <a href="https://ifing-beauty.com/collections/oway-moisturing">
+                                      <img src="../image/product/moisturizing.jpg" alt="モイスト" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-6 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-6" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-3" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/collections/sunway">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultM -->
+                            <div class="result resultM">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-3 col-12">
+                                  <h3>スムージング</h3>
+                                    <a href="https://ifing-beauty.com/products/list?category_id=32">
+                                      <img src="../image/product/smooth.jpg" alt="スムーズ" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-3 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/products/list?category_id=21">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-3" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/products/list?category_id=29">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-3" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/products/list?category_id=31">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- If ResultN -->
+                            <div class="result resultN">
+                              <h2>あなたのお勧めは...</h2>
+                              <div class="row">
+                                <div class="col-md-3 col-12">
+                                  <h3>リビルディング</h3>
+                                    <a href="https://ifing-beauty.com/products/list?category_id=3">
+                                      <img src="../image/product/rebuilding.jpg" alt="スムーズ" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <!-- typeK/typeLが選択された場合 -->
+                                <div class="disp-sunway col-md-3 col-12">
+                                  <h3>サンウェイ</h3>
+                                    <a href="https://ifing-beauty.com/products/list?category_id=21">
+                                    <img src="../image/product/sunway.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="color col-md-3" style="display:none;">
+                                  <h3>カラーアップ</h3>
+                                  <a href="https://ifing-beauty.com/products/list?category_id=29">
+                                    <img src="../image/product/colorUp.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                                <div class="perm col-md-3" style="display:none;">
+                                  <h3>ビーカーリー</h3>
+                                  <a href="https://ifing-beauty.com/products/list?category_id=31">
+                                    <img src="../image/product/beCurly.jpg" alt="サンウェイ3点セット" class="img-fluid">
+                                    </a>
+                                    <p class="link">※ 画像クリックして商品ページへ</p>
+                                </div>
+                              </div>
+                            </div>
+
+
+                        </div>
+                        <!-- modal-body (end) -->
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" id="refresh" data-dismiss="modal">もう一度行う　<i class="fas fa-redo-alt"></i></button>
+                        </div>
+                      </div>
+                      <!-- modal-content -->
+                    </div>
+                  </div>
+                  <!-- カウンセリング診断の結果 -->
+
+                  <!-- message -->
+                  <div id="message">
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">未回答</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            未回答の質問があります。もう一度お願いいたします。
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //message -->
+
+                </div>
+                <!-- questionnare id=section5 -->
+            </div>
+            <!-- //question -->
+
+            <!-- footer -->
+            <footer class="footer">
+            <p><a href="#">特定商取引法に基づく表示</a></p>
+            <p><a href="#">プライバシーポリシー</a></p>
+            <p><a href="#">利用規約</a></p>
+            <p><a href="#">会社情報</a></p>
+            <p>Copyright © IFING Co., Ltd. All Rights Reserved.</p>
+            </footer>
+            <!-- //footer -->
+
+    </div>
+    <!-- wrapper -->
+
+    </body>
