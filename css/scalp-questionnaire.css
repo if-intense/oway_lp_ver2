@@ -100,3 +100,30 @@ button {
 .modal-content p.button {
   width: 100%;
 }
+
+.go-back-to-index {
+  border:1px solid #9a9a9a;
+  background:rgba(255,255,255,0.8);
+  text-align: center;
+  padding:10px 0;
+  border-radius:5px;
+  margin-bottom:5vh;
+}
+
+.go-back-to-index a {
+  text-decoration: none;
+  color: #000;
+}
+
+.go-back-to-index a span {
+  font-size:0.8em;
+}
+
+.go-back-to-index:hover {
+  background: linear-gradient(180deg, rgba(217,193,57,1) 0%, rgba(236,232,212,1) 50%);
+}
+
+.go-back-to-index a:hover {
+  font-weight:bold;
+  color:#000;
+}

@@ -5,8 +5,8 @@
     }
 
     .logo {width:200px;}
-    .left {background:rgba(255,255,255,0.8); box-shadow: 3px 6px 10px #9a9a8a;height: 100vh; overflow-y: scroll;font-family: "Montserrat", "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", sans-serif;}
-    .right {min-height: 100vh; padding:40px 0; background: rgba(120,180,200, 0.7); overflow-y: scroll;}
+    .left {background:rgba(255,255,255,0.8); box-shadow: 3px 6px 10px #9a9a8a;height: calc(100vh - 60px); overflow-y: scroll;font-family: "Montserrat", "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", sans-serif;}
+    .right {height:calc(100vh - 60px); padding:40px 0; background: rgba(120,180,200, 0.7); overflow-y: scroll;}
     .right h4 {text-align: center; margin-top:40px;}
     .right .inner {
       width:90%;
@@ -44,9 +44,32 @@
     label{ margin-right: 15px; }
     /*.product {background:#ffcc00; padding:20px; margin-top: 20px;}*/
     section {margin:20px auto; padding:20px 0; border-top:1px solid #9a9a9a;}
-    section h3 {font-size:1.25em;}
-    section .answers {margin-left:20px;}
+    section h3 {font-size:1em;}
+    section .answers {margin-left:20px;font-size:0.9em;}
     .show {display:none;}
+
+    .go-back-to-index {
+      /*border:1px solid #9a9a9a;*/
+      /*background:rgba(255,255,255,0.8);*/
+      text-align: center;
+      padding:10px 0;
+      /*border-radius:5px;*/
+    }
+
+    .go-back-to-index a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .go-back-to-index a span {
+      font-size:0.8em;
+    }
+
+    .go-back-to-index .btn:hover {
+      font-weight:bold;
+      box-shadow: 3px 3px 6px #9a9a9a;
+    }
+
 
 @media screen and (min-width: 768px) {
     .box h2, .product h2 {font-size:1em;}
