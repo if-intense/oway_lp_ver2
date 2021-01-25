@@ -1,6 +1,6 @@
 body {
   font-family: "Montserrat", "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", sans-serif;
-  background:url('../image/sect-bg/bg013.jpg') no-repeat;
+  background:url('../image/sect-bg/bg013.png') no-repeat;
   /*background: rgb(233,193,106);*/
   /*background: linear-gradient(135deg, rgba(233,193,106,1) 0%, rgba(231,222,202,1) 100%);*/
   background-position: center;
@@ -80,6 +80,7 @@ label {
 
 .column-2 {
   background:rgba(255,255,255,0.7);
+  overflow-y: scroll;
 }
 
 .go-back-to-index {
@@ -263,7 +264,7 @@ label {
 .wax-clay-fiber p {
 
   text-align: right;
-  transform: rotate(10deg);
+  /*transform: rotate(10deg);*/
 }
 
 .wax-clay-fiber p span {
