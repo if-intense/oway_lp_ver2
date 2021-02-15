@@ -12,7 +12,7 @@ body {
 
 .banner {
   height: 100vh;
-  min-height: 500px;
+  /*min-height: 500px;*/
   background-image: url('../image/background.jpg');
   background-size: cover;
   background-position: center;
@@ -180,7 +180,7 @@ body {
 .tile-wrapper .text-overlay, .purchase .text-overlay {
     position: absolute;
     /*width: 50%;*/
-    height: 50%;
+    /*height: 50%;*/
     overflow: auto;
     margin: auto;
     top: 0;
@@ -188,6 +188,8 @@ body {
     bottom: 0;
     right: 0;
     text-align: center;
+    background:rgba(0,0,0,0.28);
+    padding:6vh 0;
 }
 
 .tile-wrapper .text-overlay h2 {
@@ -266,7 +268,7 @@ body {
 .modal-body h5{
   text-decoration: underline;
   font-weight:bold;
-  font-size:24px;
+  font-size:20px;
   text-align: center;
 }
 
@@ -281,6 +283,10 @@ body {
 
 .modal-body p {
   margin-left:20px;
+}
+
+.modal-body p {
+  font-size:16px;
 }
 
 .modal-body p.modal-text{
@@ -406,6 +412,14 @@ body {
     line-height:1.5em;
   }
 
+  .modal-body p {
+    font-size:0.9em;
+  }
+
+  .modal-body p.small {
+    font-size:0.7em;
+  }
+
   .modal-body p.modal-text{
     padding:5px 10px;
     font-size:0.9em;
@@ -443,7 +457,7 @@ body {
   }
 
   .banner {
-    min-height:100vh;
+    object-fit: contain;
   }
   .banner .top_text {
   background:black;
@@ -484,6 +498,12 @@ body {
   .modal-body h5 {
     font-size:1em;
   }
+
+  .modal-body p.small {
+    font-size:0.6em;
+  }
+
+
 
   .modal-body p.modal-text {
     font-size:0.8em;
