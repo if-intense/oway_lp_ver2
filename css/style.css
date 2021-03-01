@@ -1,7 +1,56 @@
 body {
-  background:#000;
+  background:black;
+  height:100%;
 }
 
+
+
+
+.path-to-link {
+  padding-left:20px;
+  padding-top:10px;
+}
+
+.path-to-link p {
+  color:#7a7a7a;
+}
+
+.path-to-link p a {
+  text-decoration: none;
+  color:#7a7a7a;
+}
+
+.path-to-link p a:hover {
+  text-decoration:underline;
+  color:rgb(41,191,230);
+}
+
+.path-to-link h2 {
+  font-size:2em;
+}
+
+.previous-page {
+  position: fixed;
+  z-index: 999;
+  border-radius:10px;
+  border:3px double #707070;
+  background-color:rgba(255,255,255,0.9);
+  top:70px;
+  right:20px;
+  text-align:center;
+  padding:10px;
+  width:150px;
+  max-height:80px;
+}
+
+.previous-page a {
+  text-decoration:none;
+  color:#707070;
+}
+
+.previous-page a i {
+  font-size:1.5em;
+}
 
 
 .br_on {
@@ -10,20 +59,21 @@ body {
 
 
 
-.banner {
-  height: 100vh;
+.jumbotron {
+  height: calc(100vh - 60px);
   /*min-height: 500px;*/
   background-image: url('../image/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   position: relative;
+  margin-bottom:0;
 }
 
 
 
-.banner h2.desc {
+.jumbotron h2.desc {
    font-size:24px;
    /*margin-bottom:4vh;*/
    position:absolute;
@@ -31,11 +81,37 @@ body {
    left:3%;
 }
 
-.banner h2.desc span {
+.jumbotron h2.desc span {
 /*  color:white;
   background:black;*/
   padding:5px 10px;
   line-height: 2em;
+}
+
+.jumbotron .sect {
+  position:fixed;
+  bottom:20px;
+}
+
+.strip {
+  background:#0f0;
+  background:url('../image/strip-oway.jpg');
+  padding:4vh 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.strip h6 {
+  text-align:center;
+  font-size:1.25em;
+  color:rgb(255,255,255);
+  font-weight:bold;
+  text-shadow:1px 2px 6px #9a9a9a;
+}
+
+.strip .c-btn .btn {
+  width:100%;
 }
 
 .navbar .logo {
@@ -49,7 +125,7 @@ body {
 
 
 
-.banner .top_text {
+.jumbotron .top_text {
   background:black;
   color: white;
   padding:5px 10px;
@@ -266,9 +342,9 @@ body {
 }
 
 .modal-body h5{
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   font-weight:bold;
-  font-size:20px;
+  font-size:18px;
   text-align: center;
 }
 
@@ -383,7 +459,7 @@ body {
 
 
  @media screen and (max-width: 768px) {
-  .banner .top_text {
+  .jumbotron .top_text {
     font-size:0.7em;
   }
 
@@ -406,6 +482,12 @@ body {
 @media screen and (max-width: 575.98px) {
   .br_on {
     display: block;
+  }
+
+  .previous-page {
+    position: fixed;
+    z-index: 999;
+    bottom:6vh;
   }
 
   .modal-body h5{
@@ -434,7 +516,7 @@ body {
     margin-bottom:3vh;
   }
 
-  .banner h2.desc {
+  .jumbotron h2.desc {
    font-size:18px;
    /*margin-bottom:4vh;*/
    position:absolute;
@@ -456,10 +538,10 @@ body {
     width:140px;
   }
 
-  .banner {
+  .jumbotron {
     object-fit: contain;
   }
-  .banner .top_text {
+  .jumbotron .top_text {
   background:black;
   color: white;
   padding:5px 10px;
@@ -496,7 +578,7 @@ body {
   }
 
   .modal-body h5 {
-    font-size:1em;
+    font-size:0.9em;
   }
 
   .modal-body p.small {

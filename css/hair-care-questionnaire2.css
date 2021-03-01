@@ -39,6 +39,12 @@
     display: none;}
     /*.try-again {margin:2vh auto;}*/
 
+    #generate {width:100%;}
+
+
+    .disp-smartphone {
+      display:none;
+    }
 
 
     label{ margin-right: 15px; }
@@ -85,6 +91,20 @@
     .box h2, .product h2 {font-size:1em;}
     .br_off {display:none;}
 
+}
+
+
+@media screen and (max-width: 567px) {
+    .disp-smartphone {
+      display:block;
+      padding:4vh 0;
+      /*background:red;*/
+      width:100%;
+    }
+
+    .disp-smartphone h3 {
+      text-align:center;
+    }
 }
 
 

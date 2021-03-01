@@ -39,7 +39,13 @@
     display: none;}
     /*.try-again {margin:2vh auto;}*/
 
+    .disp-smartphone {
+      display:none;
+    }
 
+    .btn {
+      width:100%;
+    }
 
     label{ margin-right: 15px; }
     /*.product {background:#ffcc00; padding:20px; margin-top: 20px;}*/
@@ -73,3 +79,17 @@
 
 @media screen and (min-width: 768px) {
     .box h2, .product h2 {font-size:1em;}
+}
+
+@media screen and (max-width: 500px) {
+    .disp-smartphone {
+      display:block;
+      padding:4vh 0;
+      /*background:red;*/
+      width:100%;
+    }
+
+    .disp-smartphone h3 {
+      text-align:center;
+    }
+}
