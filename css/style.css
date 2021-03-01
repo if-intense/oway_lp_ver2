@@ -38,14 +38,15 @@ body {
   top:70px;
   right:20px;
   text-align:center;
-  padding:10px;
-  width:150px;
-  max-height:80px;
+  padding:5px;
+  width:130px;
+  max-height:40px;
 }
 
 .previous-page a {
   text-decoration:none;
   color:#707070;
+  font-size:12px;
 }
 
 .previous-page a i {
@@ -601,5 +602,11 @@ body {
   .tile-wrapper .text-overlay h2 {
       font-size:28px;
   }
+
+  .jumbotron h2.desc span {
+    font-size:0.8em;
+  }
+
+}
 
 
