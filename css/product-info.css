@@ -83,6 +83,12 @@
   background-position: center center;
 }
 
+.dog {
+  background:url("../image/with-dog.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .product_banner .inner {
   text-align: center;
 }
@@ -143,6 +149,10 @@
   margin-bottom:5px;
 }
 
+.duetto {
+  margin:5vh auto 3vh;
+}
+
 .footer {
   background:#1a2228;
 }
@@ -170,5 +180,23 @@
     height: 60px;
     bottom: 30px;
     right: 30px;
-}
+  }
+
+  .duetto h1 {
+    font-size:24px;
+  }
+
+  .duetto h2 {
+    font-size:20px;
+  }
+
+  .duetto h3 {
+    font-size:16px;
+  }
+
+  .duetto .text {
+    margin-top:2vh;
+  }
+
+
 }

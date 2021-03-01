@@ -27,6 +27,10 @@ html, body {
   margin:30px auto;
 }
 
+.jumbotron {
+  background:url(../image/with-dog.jpg);
+}
+
 
 
 .right-side {
