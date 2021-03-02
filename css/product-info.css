@@ -94,10 +94,13 @@
 }
 
 .product_banner .inner h1 span {
-  background: #fff;
+  /*background: #fff;*/
   padding:5px 10px;
-  font-family: 'Archivo Black', sans-serif;
-  box-shadow: 2px 3px 6px #9a9a9a;
+  font-family: 'Helvetica', sans-serif;
+ /* box-shadow: 2px 3px 6px #9a9a9a;*/
+  font-weight:bold;
+  color:white;
+  text-shadow:1px 3px 6px #9a9a9a;
 }
 
 .productPage .nav {

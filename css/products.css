@@ -28,9 +28,10 @@
 
 .mainArea h4 {
 	padding-top:3vh;
-	font-family: 'Archivo Black', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	text-align: center;
-	font-size:3em;
+	font-size:34px;
+  font-weight:bold;
 	overflow-y: hidden;
 }
 
@@ -39,6 +40,11 @@
 	/*background:lightblue;*/
 	padding:10px;
 	animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .mainArea .care-items .genre {
@@ -88,7 +94,7 @@
 }
 
 .mainArea .care-items .genre p {
-	font-size:0.75em;
+	font-size:12px;
 }
 
 .mainArea .care-items .genre:hover {
@@ -117,4 +123,5 @@
 .footer p a:hover {
   text-decoration: underline;
 }
+
 
