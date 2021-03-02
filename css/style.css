@@ -74,20 +74,18 @@ body {
 
 
 
-.jumbotron h2.desc {
+.jumbotron h2 {
    font-size:24px;
    /*margin-bottom:4vh;*/
-   position:absolute;
-   top:6%;
-   left:3%;
+
 }
 
-.jumbotron h2.desc span {
-/*  color:white;
-  background:black;*/
+/*.jumbotron h2 span {
+  color:white;
+  background:black;
   padding:5px 10px;
   line-height: 2em;
-}
+}*/
 
 .jumbotron .sect {
   position:fixed;
@@ -502,6 +500,11 @@ body {
     display: block;
   }
 
+  .jumbotron h2 {
+    font-size:1em;
+  }
+
+
   .previous-page {
     position: fixed;
     z-index: 999;
@@ -559,12 +562,6 @@ body {
   .jumbotron {
     object-fit: contain;
   }
-  .jumbotron .top_text {
-  background:black;
-  color: white;
-  padding:5px 10px;
-  font-size:0.55em;
-  }
 
 
   .hair_care, .styling {
@@ -619,7 +616,7 @@ body {
       font-size:28px;
   }
 
-  .jumbotron h2.desc span {
+  .jumbotron h2 {
     font-size:0.8em;
   }
 
