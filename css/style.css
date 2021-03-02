@@ -172,23 +172,30 @@ body {
 }
 
 
-.footer {
+.footer, .footer-oway {
   background:#1a2228;
 }
 
-.footer p a, .footer p {
+.footer-oway {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.footer p a, .footer p, .footer-oway p a, .footer-oway p {
   color:white;
   font-size:0.8em;
   text-align: right;
   padding-right:30px;
 }
 
-.footer p a {
+.footer p a, .footer-oway p a  {
   color:white;
   text-decoration: none;
 }
 
-.footer p a:hover {
+.footer p a:hover, .footer-oway p a:hover {
   text-decoration: underline;
 }
 
@@ -490,6 +497,10 @@ body {
 
   .glass_and_aluminum_img img {
     margin-bottom:3vh;
+  }
+
+  .footer-oway {
+    position:relative;
   }
 
 
