@@ -296,13 +296,14 @@ body {
     font-size: 32px;
     line-height: 36px;
     /* margin: 0 0 10px; */
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Helvetica', sans-serif;
+    font-weight:bold;
 }
 
 .tile-wrapper .text-overlay h6 {
     color: #fff;
     font-size:22px;
-    font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+    font-family:"Hiragino Kaku Gothic ProN", "Hiragino Sans";
 
 }
 .tile-wrapper .text-overlay p {
