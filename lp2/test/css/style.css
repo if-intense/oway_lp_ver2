@@ -1,0 +1,500 @@
+body {
+  background:#000;
+}
+
+
+.banner {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('../image/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner .top_text {
+  background:black;
+  color: white;
+  padding:5px 10px;
+}
+
+
+
+.area_one {
+  background: #000;
+}
+
+
+
+.new_section {
+  padding:20px;
+  background: #fff;
+}
+
+.hair_care, .styling {
+  height:40vh;
+  background:#fff;
+
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.area_two {
+  background:#000;
+  /*padding:20px;*/
+}
+
+
+
+
+
+
+.footer {
+  background:#1a2228;
+}
+
+.footer p a, .footer p {
+  color:white;
+  font-size:0.8em;
+  text-align: right;
+  padding-right:30px;
+}
+
+.footer p a {
+  color:white;
+  text-decoration: none;
+}
+
+.footer p a:hover {
+  text-decoration: underline;
+}
+
+
+
+/*section-box*/
+
+.section-box {
+  height: 45vh;
+  padding:20px;
+  border:1px solid #333;
+  flex-direction: column;
+  position:relative;
+}
+
+.section-box .light-dark{
+  position:absolute;
+  top:0;
+  left:0;
+  height:45vh;
+}
+
+.section-box p.text {
+  color:white;
+ /* display: none;*/
+}
+
+
+.section-box:hover > .light-dark   {
+  background:rgba(0,0,0,0.5);
+  display: block;
+  cursor: pointer;
+}
+
+.section-box h2, .section-box h3, .new_section h2, .new_section h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.section-box h2 {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+
+
+
+
+.section-box p.link_to {
+  text-align: center;
+}
+
+.section-box p.youtube_link {
+  text-align: right;
+
+}
+
+.section-box p.link_to a {
+  color: white;
+  text-decoration:underline;
+}
+
+.section-box p.link_to a:hover {
+  color: yellow;
+  font-weight:bold;
+}
+
+.new_section h2 {
+  font-family: 'Archivo Black', sans-serif;
+  color:black;
+}
+
+.new_section h3 {
+  /*font-family: 'Archivo Black', sans-serif;*/
+  color:black;
+}
+
+.new_section .ecocert {
+  color:rgb(204,28,67);
+}
+
+.new_section .bioagricert {
+  color:rgb(65, 128,60);
+}
+
+.new_section .youtube {
+  text-align: center;
+}
+
+
+
+/*section-box*/
+
+.page-top {
+  text-align:right;
+  text-decoration: none;
+  margin:3vh 0;
+}
+
+.page-top a {
+  color: black;
+}
+
+.shop {
+  position: fixed;
+  right: 40px;
+  top: 20px;
+  z-index: 999;
+}
+
+/*product_box*/
+.product_title {
+  height: 50%;
+}
+
+.product_title h2 {
+  text-align: center;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.area_two .hair_care {
+  background:url("../image/product.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.area_two .styling {
+  background:url("../image/infine.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hair_care .product_details, .styling .product_details {
+  background:rgba(255,255,255,0.56);
+  border:1px solid rgb(112,112,112);
+  font-size: 0.8em;
+  padding:10px;
+}
+
+.hair_care .product_link p, .styling .product_link p{
+  background: rgb(19,38,38);
+  background: linear-gradient(0deg, rgba(19,38,38,1) 0%, rgba(152,149,143,1) 100%);
+  padding:15px 0;
+  text-align: center;
+}
+
+.hair_care .product_link p a, .styling .product_link p a{
+  color:white;
+
+
+}
+
+
+/*.area_three .mod_size h2, .area_three .mod_size h3{
+  text-align:center;
+}
+
+.area_three .mod_size h2 {
+  font-family: 'Archivo Black', sans-serif;
+  margin:2vh 0;
+}
+
+.area_three .mod_size h3 {
+  font-weight: bold;
+}*/
+
+.ortoficcina-modal .ortoficcina img {
+  -webkit-filter: drop-shadow(2px 5px 3px #222222);
+  filter: drop-shadow(2px 5px 3px #222222);
+}
+
+.ortoficcina-modal .mod_description {
+  padding:10px 20px;
+  border:1px solid #000;
+  margin-top:20px;
+}
+
+
+/*product_box*/
+
+/*section-images*/
+.sect001 {
+  background:url('../image/sect-bg/sect001.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect002 {
+  background:url('../image/sect-bg/sect002.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect003 {
+  background:url('../image/sect-bg/sect003.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect004 {
+  background:url('../image/sect-bg/sect004.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect005 {
+  background:url('../image/sect-bg/sect005.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect006 {
+  background:url('../image/sect-bg/sect006.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect007 {
+  background:url('../image/sect-bg/sect007.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect008 {
+  background:url('../image/sect-bg/sect008.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect009 {
+  background:url('../image/sect-bg/sect009.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sect010 {
+  background:url('../image/sect-bg/sect010.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+/*modal*/
+.modal-body h5{
+  text-decoration: underline;
+  font-weight:bold;
+  font-size:24px;
+  text-align: center;
+}
+
+.modal-body h4 {
+  text-align: center;
+}
+
+.modal-body p.modal-text{
+  color:black;
+}
+
+.modal-footer a {
+  color: white;
+  padding:10px 20px;
+  border-radius:10px;
+  box-shadow:1px 1px 3px #000;
+}
+
+.modal-footer a.go_to_enquete_page {
+  background: #bfbfbf;
+}
+
+.modal-footer a.go_to_ifing_beauty {
+  background: rgba(68, 108, 179, 1);
+}
+
+.modal-footer a.go_to_enquete_page:hover {
+  background: rgb(77,77,77);
+  background: linear-gradient(0deg, rgba(77,77,77,1) 0%, rgba(173,173,173,1) 100%);
+  text-decoration: underline;
+  color: white;
+  font-weight:bold;
+}
+
+
+.modal-footer a.go_to_ifing_beauty:hover {
+  background: rgb(68,108,179);
+  background: linear-gradient(0deg, rgba(68,108,179,0.01) 0%, rgba(73,114,182,1) 4%, rgba(192,255,255,1) 100%);
+  text-decoration: underline;
+  color: white;
+  font-weight:bold;
+}
+
+
+
+ @media screen and (max-width: 768px) {
+  .banner .top_text {
+    font-size:0.7em;
+  }
+
+
+  .hair_care, .styling {
+    height:40vh;
+  }
+
+  .hair_care .product_details p , .styling .product_details p {
+    font-size:0.7em;
+  }
+
+  .section-box, .area_two .styling, .area_two .hair_care {
+    /*max-width: calc(100% - 2em)!important;*/
+    width: 100%;
+    margin: 0;
+  }
+
+  .area_two {
+    padding:0;
+  }
+
+  .area_three .ortoficcina img {
+    margin:2vh 0;
+  }
+
+ }
+
+
+@media screen and (max-width: 480px) {
+
+  .logo {
+    width:140px;
+  }
+
+  .banner {
+    height: 10vh;
+    min-height:400px;
+  }
+  .banner .top_text {
+  background:black;
+  color: white;
+  padding:5px 10px;
+  font-size:0.55em;
+  }
+
+  .section-box {
+  height: 60vh;
+  padding:20px;
+  }
+
+  .section-box p.text {
+    font-size:0.75em;
+  }
+
+
+
+  .hair_care, .styling {
+   height:40vh;
+  }
+
+  .area_two .hair_care, .area_two .styling {
+    max-width: 100% !important;
+  }
+
+
+
+  .hair_care .product_link, .styling .product_link {
+    margin-bottom:auto;
+    margin-top:auto;
+  }
+
+  .hair_care .product_link p, .styling .product_link p {
+    font-size: 0.8em;
+    padding:5px;
+  }
+
+  .container-fluid .section-box h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size:1.7em;
+  }
+
+  .container-fluid .section-box h3 {
+    font-size:1.2em;
+    font-weight:bold;
+  }
+
+  .shop {
+    width:127px;
+    height:72px;
+    right:10px;
+  }
+
+  .modal-body h5 {
+    font-size:1em;
+  }
+
+  .modal-body p.modal-text {
+    font-size:0.8em;
+  }
+
+  .new_section .youtube {
+    text-align:left;
+  }
+
+  .youtube {
+    font-size:0.8em;
+  }
+
+  .new_section .youtube strong {
+    width:300px;
+  }
+
+  .youtube-link {
+    width:120px;
+  }
+
+
+  .area_three .ortoficcina img {
+    margin:2vh 0;
+  }
+
+
+}
